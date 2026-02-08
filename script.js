@@ -26,7 +26,7 @@ const init = () => {
 
   const engine = Engine.create()
 
-  const render = Render.create({
+  const render = Render.create ({
     canvas: canvas,
     engine: engine,
     options: {
@@ -36,8 +36,8 @@ const init = () => {
       pixelRatio: 1,
       showAngleIndicator: false,
       wireframes: false
-    }
-  })
+    }  <!-- options: -->
+  })  <!-- const render = Render.create -->
 
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Boxes ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   const options = {
@@ -63,9 +63,9 @@ const init = () => {
           texture:
           'https://raw.githubusercontent.com/supahfunk/supah-codepen/master/user-default-avatar.jpg'
         }
-      }
-    })
-  })
+      }  <!-- render: -->
+    })  <!-- return Bodies.circle -->
+  })  <!-- const stack -->
   Composite.add(engine.world, [...walls, stack])
 
   const createPath = (path) => {
@@ -79,27 +79,27 @@ const init = () => {
 
   const offset = win.h * 0.4
 
-  const zeroPath = createPath(
+  const zeroPath = createPath (
     '0 11, 3 3, 11 0, 19 3, 22 12, 22 29, 19 38, 11 41, 3 38, 0 29'
   )
   const zeros = [0.414, 0.53, 0.645].map(i => (
-    Bodies.fromVertices(
+    Bodies.fromVertices (
       win.w * i,
       offset,
       zeroPath,
       options,
       true
-    )
-  ))
+    )  <!-- Bodes.fromVertices -->
+  )) <!-- .map -->
   const pointPath = createPath('0 0, 2 30, 5 30, 7 0')
-  const point = Bodies.fromVertices(
+  const point = Bodies.fromVertices (
     win.w * 0.735,
     win.h * -0.034 + offset,
     pointPath,
     options,
     true
   )
-  const point2 = Bodies.rectangle(
+  const point2 = Bodies.rectangle (
     win.w * 0.735,
     win.h * 0.085 + offset,
     win.w * 0.024,
@@ -146,27 +146,27 @@ const init = () => {
       h: win.w * 0.035,
     },
   ].map(({x,y,w,h}) => (
-    Bodies.rectangle(
+    Bodies.rectangle (
       x,
       y,
       w,
       h,
       options
-    )
-  ))
+    )  <!-- Bodies.rectangle -->
+  ))  <!-- .map -->
   Composite.add(engine.world, fives)
 
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Mouse ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   const mouse = Mouse.create(render.canvas),
-        mouseConstraint = MouseConstraint.create(engine, {
-          mouse: mouse,
-          constraint: {
-            stiffness: 0.2,
-            render: {
-              visible: false
-            }
-          }
-        })
+    mouseConstraint = MouseConstraint.create(engine, {
+      mouse: mouse,
+      constraint: {
+        stiffness: 0.2,
+        render: {
+          visible: false
+        }  <!-- render: -->
+      }  <!-- contraint -->
+    })  <!-- MouseConstraint.create -->
   Composite.add(engine.world, mouseConstraint)
   render.mouse = mouse
 
