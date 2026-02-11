@@ -1,2 +1,2 @@
-# thankyou7000
-Thank your subscribers for letting me hit 7,000.
+# thankyou-7000
+Thank your subscribers for getting me to 7,000.
