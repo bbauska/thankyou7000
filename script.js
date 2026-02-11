@@ -61,7 +61,8 @@ const init = () => {
           xScale: win.w < 768 ? 0.5 : 0.8,
           yScale: win.w < 768 ? 0.5 : 0.8,
           texture:
-          'https://raw.githubusercontent.com/supahfunk/supah-codepen/master/user-default-avatar.jpg'
+<!--          'https://raw.githubusercontent.com/supahfunk/supah-codepen/master/user-default-avatar.jpg'  -->
+          'https://github.com/bbauska/thankyou-5000/blob/main/images/kitterson.jpg?raw=true'
         }
       }  <!-- render: -->
     })  <!-- return Bodies.circle -->
